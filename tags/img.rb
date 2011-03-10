@@ -24,10 +24,6 @@ module Jekyll
             #determine alt/title text
             alt_title = @text.split('-').select { |w| w.capitalize! || w }.join(' ')
 
-            if ENV['JEKYLL_DEPLOY'] == 'production'
-                img_path = 'http://cdn.najafali.com/' + img_path
-            end
-
             output  = "<img src=\"#{img_path}\" alt=\"#{alt_title}\" title=\"#{alt_title}\" />"
         end
     end
